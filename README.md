@@ -13,7 +13,10 @@ Notes:
   4. The source I followed is Chris Simmond's book "Mastering Embedded Linux Programming - Second Edition." It is a fantastic book that I STRONGLY recommend. But, bear in mind that some of the steps from this version are deprecated now---I know there is a 3rd edition but this is what I could get my hands on.
 
 Now, with that out of the way, here is the whole thing in a nutshell:
-1. Installing Crosstool-NG
+
+
+## Installing Crosstool-NG
+
 1. Make sure all your packages are up to date.
      ```
     sudo apt upgrade
@@ -46,7 +49,8 @@ Now, with that out of the way, here is the whole thing in a nutshell:
 
 Now, with Crosstool-NG ready, we can begin building our Raspberry Pi 4 toolchain.
 
-2. Building a toolchain for Raspberry Pi 4
+
+## Building a toolchain for Raspberry Pi 4
    
 1. Crosstool-NG comes with a list of sample configurations for different hardware architectures to make the process easier. Display all the options and choose the one suitable for our target hardware.
    ```
@@ -88,7 +92,7 @@ The generated toolchain can be found in `~/x-tools/aarch64-rpi4-linux-gnu`.
 
 And finally, what everyone is waiting for: writing code and cross-compiling it.
 
-3. Using the Toolchain
+## Using the Toolchain
 
 1. In order to use the cross compiler, add its directory to your path.
    ```
