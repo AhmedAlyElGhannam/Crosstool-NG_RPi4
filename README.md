@@ -24,22 +24,24 @@ Now, with that out of the way, here is the whole thing in a nutshell:
     ```
 
 2. Clone Crosstool-NG's Git repository. Make sure to clone it in the desired directory. In my case, I cloned it in Desktop.
-   `git clone https://github.com/crosstool-ng/crosstool-ng.git`
+   ```
+   git clone https://github.com/crosstool-ng/crosstool-ng.git
+   ```
 
-3. After the process is done, change directory to crosstool-ng and see which branch is your repository on.
+4. After the process is done, change directory to crosstool-ng and see which branch is your repository on.
     ```
     cd crosstool-ng
     git status
     ```
 
-4. Make sure you are on "master" and not any other branch. *This costed me over 90 minutes of work because I was on a deprecated branch.* If you were not on the master branch, switch to the master branch and then make sure you are on it.
+5. Make sure you are on "master" and not any other branch. *This costed me over 90 minutes of work because I was on a deprecated branch.* If you were not on the master branch, switch to the master branch and then make sure you are on it.
     ```
     git checkout master
     git status
     ```
     *maybe add a pic here*
 
-5. Execute the following commands in sequence. the `--enable-local` option means that the program will be installed into the current directory, which avoids the need for root permissions. After executing them, Crosstool-NG will be installed on your system and can be run from the repository folder. It can be run by typing `./ct-ng` from the repository's directory.
+6. Execute the following commands in sequence. the `--enable-local` option means that the program will be installed into the current directory, which avoids the need for root permissions. After executing them, Crosstool-NG will be installed on your system and can be run from the repository folder. It can be run by typing `./ct-ng` from the repository's directory.
     ```
     ./bootstrap
     ./configure --enable-local
