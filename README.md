@@ -86,7 +86,7 @@ Now, with Crosstool-NG ready, we can begin building our Raspberry Pi 4 toolchain
    ![](README_Photos/c-lib.jpeg)
    ![](README_Photos/glibcversion.jpeg)
 
-10. Now, the toolchain is read to be built. The building process took me between 22 and 23 minutes on a PC with the specs listed above. I ran it 3 times and the time varies by 10-20 seconds between builds.
+10. Now, the toolchain is read to be built. The building process took me between 22 and 23 minutes on a PC with the specs listed above. I ran it 3 times and the time varies by 20-40 seconds between builds.
    ```
    ./ct-ng build
    ```
