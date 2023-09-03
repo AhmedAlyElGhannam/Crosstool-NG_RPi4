@@ -39,7 +39,7 @@ Now, with that out of the way, here is the whole thing in a nutshell:
     git checkout master
     git status
     ```
-    ![]([MD Photo/branchismaster.jpeg)](https://github.com/AhmedAlyEl-Ghannam/Crosstool-NG_RPi4/blob/master/MD%20Photos/branchismaster.jpeg)
+    ![](README_Photos/branchismaster.jpeg)
 
 7. Execute the following commands in sequence. the `--enable-local` option means that the program will be installed into the current directory, which avoids the need for root permissions. After executing them, Crosstool-NG will be installed on your system and can be run from the repository folder. It can be run by typing `./ct-ng` from the repository's directory.
     ```
@@ -58,18 +58,18 @@ Now, with Crosstool-NG ready, we can begin building our Raspberry Pi 4 toolchain
    ```
    ./ct-ng list-samples
    ```
-   ![](MD Photo/listsamples1.jpeg)
-   ![](MD Photo/listsamples2.jpeg)
-   ![](MD Photo/listsamples3.jpeg)
+   ![](README_Photos/listsamples1.jpeg)
+   ![](README_Photos/listsamples2.jpeg)
+   ![](README_Photos/listsamples3.jpeg)
 
 3. The configuration made for Raspberry Pi 4 is `aarch64-rpi4-linux-gnu`. You can display its details using the command `./ct-ng show-aarch64-rpi4-linux-gnu`
-   ![](MD Photo/showrpi4confdetails.jpeg)
+   ![](README_Photos/showrpi4confdetails.jpeg)
 
 4. Now, select this target configuration.
    ```
    ./ct-ng aarch64-rpi4-linux-gnu
    ```
-   ![](MD Photo/conf_for_rpi4.jpeg)
+   ![](README_Photos/conf_for_rpi4.jpeg)
 
 5. The next few steps are INCREDIBLY important. They start by opening the configuration menu.
    ```
@@ -78,20 +78,20 @@ Now, with Crosstool-NG ready, we can begin building our Raspberry Pi 4 toolchain
    
 6. A step that is always the first thing to do is:
    Paths and Misc Options => Disable Render the Toolchain read-only
-   ![](MD Photo/pathsandmisc.jpeg)
-   ![](MD Photo/disablereadonly.jpeg)
+   ![](README_Photos/pathsandmisc.jpeg)
+   ![](README_Photos/disablereadonly.jpeg)
 
 8. The next one can make or break your toolchain. Make sure to select a glibc version that is compatible with the system running on your target hardware: in my case, it is running Raspbian 11 with glibc version 2.31. *Not doing this step costed me over 3 hours until I configured it myself.*
    C-Library => Version of glibc => Choose 2.31
-   ![](MD Photo/c-lib.jpeg)
-   ![](MD Photo/glibcversion.jpeg)
+   ![](README_Photos/c-lib.jpeg)
+   ![](README_Photos/glibcversion.jpeg)
 
 10. Now, the toolchain is read to be built. The building process took me between 22 and 23 minutes on a PC with the specs listed above. I ran it 3 times and the time varies by 10-20 seconds between builds.
    ```
    ./ct-ng build
    ```
-   ![](MD Photo/buildtime1.jpeg)
-   ![](MD Photo/buildtime2.jpeg)
+   ![](README_Photos/buildtime1.jpeg)
+   ![](README_Photos/buildtime2.jpeg)
 
 The generated toolchain can be found in `~/x-tools/aarch64-rpi4-linux-gnu`.
 
@@ -112,10 +112,10 @@ And finally, what everyone is waiting for: writing code and cross-compiling it.
    ```
 
 3. The command `file` can be used to confirm that the object file has been cross compiled.
-   ![](MD Photo/filedetails.jpeg)
+   ![](README_Photos/filedetails.jpeg)
 
 4. Now, to test it on my Pi. Notice that I use VNC because I am too lazy to buy a micro hdmi cable and I am screencasting it on my phone.
-   ![](MD Photo/compilationonrpi4.jpeg)
+   ![](README_Photos/compilationonrpi4.jpeg)
 
 
 That's all folks!
