@@ -39,9 +39,9 @@ Now, with that out of the way, here is the whole thing in a nutshell:
     git checkout master
     git status
     ```
-    *maybe add a pic here*
+    ![](MD Photo/branchismaster.jpeg)
 
-6. Execute the following commands in sequence. the `--enable-local` option means that the program will be installed into the current directory, which avoids the need for root permissions. After executing them, Crosstool-NG will be installed on your system and can be run from the repository folder. It can be run by typing `./ct-ng` from the repository's directory.
+7. Execute the following commands in sequence. the `--enable-local` option means that the program will be installed into the current directory, which avoids the need for root permissions. After executing them, Crosstool-NG will be installed on your system and can be run from the repository folder. It can be run by typing `./ct-ng` from the repository's directory.
     ```
     ./bootstrap
     ./configure --enable-local
@@ -58,35 +58,40 @@ Now, with Crosstool-NG ready, we can begin building our Raspberry Pi 4 toolchain
    ```
    ./ct-ng list-samples
    ```
-   *maybe add a photo here*
+   ![](MD Photo/listsamples1.jpeg)
+   ![](MD Photo/listsamples2.jpeg)
+   ![](MD Photo/listsamples3.jpeg)
 
-2. The configuration made for Raspberry Pi 4 is `aarch64-rpi4-linux-gnu`. You can display its details using the command `./ct-ng show-aarch64-rpi4-linux-gnu`
-   *add config details*
+3. The configuration made for Raspberry Pi 4 is `aarch64-rpi4-linux-gnu`. You can display its details using the command `./ct-ng show-aarch64-rpi4-linux-gnu`
+   ![](MD Photo/showrpi4confdetails.jpeg)
 
-3. Now, select this target configuration.
+4. Now, select this target configuration.
    ```
    ./ct-ng aarch64-rpi4-linux-gnu
    ```
+   ![](MD Photo/conf_for_rpi4.jpeg)
 
-4. The next few steps are INCREDIBLY important. They start by opening the configuration menu.
+5. The next few steps are INCREDIBLY important. They start by opening the configuration menu.
    ```
    ./ct-ng menuconfig
    ```
    
-5. A step that is always the first thing to do is:
+6. A step that is always the first thing to do is:
    Paths and Misc Options => Disable Render the Toolchain read-only
-   *photos*
+   ![](MD Photo/pathsandmisc.jpeg)
+   ![](MD Photo/disablereadonly.jpeg)
 
-6. The next one can make or break your toolchain. Make sure to select a glibc version that is compatible with the system running on your target hardware: in my case, it is running Raspbian 11 with glibc version 2.31. *Not doing this step costed me over 3 hours until I configured it myself.*
+8. The next one can make or break your toolchain. Make sure to select a glibc version that is compatible with the system running on your target hardware: in my case, it is running Raspbian 11 with glibc version 2.31. *Not doing this step costed me over 3 hours until I configured it myself.*
    C-Library => Version of glibc => Choose 2.31
-   *photo*
+   ![](MD Photo/c-lib.jpeg)
+   ![](MD Photo/glibcversion.jpeg)
 
-7. Now, the toolchain is read to be built. The building process took me between 22 and 23 minutes on a PC with the specs listed above. I ran it 3 times and the time varies by 10-20 seconds between builds.
+10. Now, the toolchain is read to be built. The building process took me between 22 and 23 minutes on a PC with the specs listed above. I ran it 3 times and the time varies by 10-20 seconds between builds.
    ```
    ./ct-ng build
    ```
-   *build time*
-   *build time*
+   ![](MD Photo/buildtime1.jpeg)
+   ![](MD Photo/buildtime2.jpeg)
 
 The generated toolchain can be found in `~/x-tools/aarch64-rpi4-linux-gnu`.
 
@@ -107,10 +112,10 @@ And finally, what everyone is waiting for: writing code and cross-compiling it.
    ```
 
 3. The command `file` can be used to confirm that the object file has been cross compiled.
-   *photo*
+   ![](MD Photo/filedetails.jpeg)
 
 4. Now, to test it on my Pi. Notice that I use VNC because I am too lazy to buy a micro hdmi cable and I am screencasting it on my phone.
-   *photo*
+   ![](MD Photo/compilationonrpi4.jpeg)
 
 
 That's all folks!
