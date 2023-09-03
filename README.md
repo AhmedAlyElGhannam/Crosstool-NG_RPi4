@@ -3,7 +3,7 @@
 This is a Raspberry Pi 4 cross toolchain built using Crosstool-NG. This README file shall contain all the steps I took in order to generate it and run the object file successfully on my Pi.
 
 Notes:
-  1. This toolchain was built on 1/9/2023. Some steps may differ/be omitted altogether. Please, bare in mind that Crosstool-NG is a piece of software that gets updated constantly and your steps may vary.
+  1. This toolchain was built on 1/9/2023. Some steps may differ/be omitted altogether. Please, bare in mind that Crosstool-NG is a piece of software that gets updated constantly and your steps may vary depending on when you decide to build/use Crosstool-NG.
   2. This toolchain was built on an Ubuntu 22.04 system on my trusty ten-year-old PC with the following specs:
         i7 4790k @4.4GHz
         16GB DDR3 RAM @2400MHz
