@@ -39,7 +39,7 @@ Now, with that out of the way, here is the whole thing in a nutshell:
     git checkout master
     git status
     ```
-    ![](MD Photo/branchismaster.jpeg)
+    ![]([MD Photo/branchismaster.jpeg)](https://github.com/AhmedAlyEl-Ghannam/Crosstool-NG_RPi4/blob/master/MD%20Photos/branchismaster.jpeg)
 
 7. Execute the following commands in sequence. the `--enable-local` option means that the program will be installed into the current directory, which avoids the need for root permissions. After executing them, Crosstool-NG will be installed on your system and can be run from the repository folder. It can be run by typing `./ct-ng` from the repository's directory.
     ```
