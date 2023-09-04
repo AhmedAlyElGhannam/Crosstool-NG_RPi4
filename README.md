@@ -137,7 +137,7 @@ And finally, what everyone is waiting for: writing code and cross-compiling it.
    {	
 	   int n = 50;
 	   
-     printf("%d\n", n);
+           printf("%d\n", n);
 	
 	   return 0;
    }
@@ -149,10 +149,10 @@ And finally, what everyone is waiting for: writing code and cross-compiling it.
    ![](README_Photos/comp_time_cross.jpeg)
 
 4. Next, I tried to compile all three files again but this time on the Pi itself.
-   ![](README_Photos/exec_time.jpeg)
+   ![](README_Photos/exec_time_native.jpeg)
 
 5. Finally, I ran both fib50 (natively-compiled) and fib50_rpi4 (cross-compiled).
-   ![](README_Photos/exec_time_native.jpeg)
+   ![](README_Photos/exec_time.jpeg)
 
    ### These tests lead to a few interesting findings
    1. Cross compilation will always be faster than native compilation if the cross toolchain runs on a significantly faster computer---which will almost always be the case.
