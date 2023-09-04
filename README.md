@@ -135,7 +135,7 @@ And finally, what everyone is waiting for: writing code and cross-compiling it.
 
    int main(void)
    {	
-	   int n = 50;
+           int n = 50;
 	   
            printf("%d\n", n);
 	
