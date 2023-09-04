@@ -118,6 +118,47 @@ And finally, what everyone is waiting for: writing code and cross-compiling it.
    ![](README_Photos/compilationonrpi4.jpeg)
 
 
+## BONUS: Here is a quick test to compare the performance between the cross toolchain we have just created and the native toolchain on the Pi itself
+
+1. I created a C program that calculates the nth element of a fibonacci series using recursion. For very high values of n, this program can be a huge load on any PC. I know it is not the best way to implement fibonacci series in general but it is a pretty good way to put the Pi under a good amount of load.
+   ```
+   #include <stdio.h>
+   
+   int fibonacci(int n)
+   {
+	    if (n <= 1)
+		  return 1;
+	
+	    return fibonacci(n - 1) + fibonacci(n - 2);
+   }
+
+
+   int main(void)
+   {	
+	   int n = 50;
+	   
+     printf("%d\n", n);
+	
+	   return 0;
+   }
+   ```
+
+2. The bash command `time` is added before any command executed in this section to print the execution time. This will be pretty useful to compare the final result.
+
+3. On my Ubuntu PC, I cross compiled three different versions of fib: at n = 50, n = 60, and n = 69.
+   ![](README_Photos/comp_time_cross.jpeg)
+
+4. Next, I tried to compile all three files again but this time on the Pi itself.
+   ![](README_Photos/exec_time.jpeg)
+
+5. Finally, I ran both fib50 (natively-compiled) and fib50_rpi4 (cross-compiled).
+   ![](README_Photos/exec_time_native.jpeg)
+
+   ### These tests lead to a few interesting findings
+   1. Cross compilation will always be faster than native compilation if the cross toolchain runs on a significantly faster computer---which will almost always be the case.
+   2. The execution time of an object file produced by cross compilation will almost have the same execution time of an object file produced by native compilation---one might argue that the difference is within the margin of error. 
+
+
 That's all folks!
 
 
