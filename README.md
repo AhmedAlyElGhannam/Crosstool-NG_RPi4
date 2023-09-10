@@ -7,7 +7,7 @@ Notes:
   2. This toolchain was built on an Ubuntu 22.04 system on my trusty ten-year-old PC with the following specs:
        1. i7 4790k @4.4GHz
        1. 16GB DDR3 RAM @2400MHz
-       1. GTX 980ti (irrelevant to this project) \ 
+       1. GTX 980ti (irrelevant to this project) \
  Note that build time may vary depending on your hardware.
   3. The object file was tested on a Raspberry Pi 4 8GB RAM version running Raspbian OS Desktop (Bullseye). The OS version will become relevant later on to solve an issue I encountered.
   4. The source I followed is Chris Simmond's book "Mastering Embedded Linux Programming - Second Edition." It is a fantastic book that I STRONGLY recommend. But, bear in mind that some of the steps from this version are deprecated now---I know there is a 3rd edition but this is what I could get my hands on.
